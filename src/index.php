@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION['usuario'])) {
-    header('Location: home.php');
+    header('Location: pages/home.php');
     exit;
 }
 
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['acao'])) {
         if (autenticar($email, $senha)) {
             $_SESSION['usuario'] = $email;
             $_SESSION['ultimo_acesso'] = time();
-            header('Location: home.php');
+            header('Location: pages/home.php');
             exit;
         } else {
             $erro = 'Email ou senha inválidos.';
@@ -149,6 +149,7 @@ function validarCadastro(string $nome, string $email, string $senha, string $con
 
 <body class="auth-page">
     <div class="page-wrapper">
+
         <div class="auth-card">
             <?php if ($erro): ?>
             <p class="msg error"><?= $erro ;?></p>

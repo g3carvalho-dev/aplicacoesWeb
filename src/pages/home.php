@@ -20,13 +20,20 @@
             <a href="#bancoMySQL" class="navLinks">Banco MySQL</a>
         </nav>
     </header>
-    <section id="home">Tela Principal</section>
+    <section id="home">
+        <div>
+            <h1>Como funcionam as aplicações na Web?</h1>
+            <p>Este projeto tem como objetivo explicar de forma simples e didática os conceitos fundamentais por trás do
+                funcionamento das aplicações web, utilizando uma estrutura de navegação intuitiva e interativa para
+                facilitar o aprendizado.</p>
+        </div>
+    </section>
     <section id="estruturaWeb">Estrutura Web</section>
     <section id="webService">Web-Service</section>
     <section id="persistencia">Persistência</section>
     <section id="linguagemPHP">Linguagem PHP</section>
     <section id="bancoMySQL">Banco MySQL</section>
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>

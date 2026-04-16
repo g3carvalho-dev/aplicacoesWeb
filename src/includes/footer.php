@@ -3,7 +3,7 @@
         <div class="footer-brand">
             <span class="footer-title">Como funcionam as aplicações web?</span>
             <span class="footer-logo-mark">//</span>
-            <span class="footer-title">AplicaçõesWeb</span>
+            <span class="footer-title">Aplicações para Internet</span>
         </div>
         <p class="footer-copy">
             <b>g3carvalho-dev</b>&copy; <?= date('Y') ;?> — Todos os direitos reservados.

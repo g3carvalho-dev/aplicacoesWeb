@@ -16,6 +16,13 @@
 $motivo = $_GET['motivo'] ?? 'sem_sessao';
 $isTimeout = isset($_GET['timeout']);
 
+// Ajusta o código HTTP de resposta: 401 para sessão/timeout, 404 para páginas inexistentes
+if ($motivo !== 'sem_sessao' && !$isTimeout) {
+    header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
+} else {
+    header($_SERVER['SERVER_PROTOCOL'] . ' 401 Unauthorized');
+}
+
 if ($motivo === 'sem_sessao' || $isTimeout):
     $titulo = $isTimeout ? 'Sua sessão expirou' : 'Acesso restrito';
     $descricao = $isTimeout

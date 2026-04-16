@@ -228,7 +228,7 @@ function validarCadastro(string $nome, string $email, string $senha, string $con
     </div>
     <script>
     <?php if ($modo === 'cadastro'): ?>
-    document.querySelector('.container').classList.add('active');
+        document.querySelector('.container').classList.add('active');
     <?php endif; ?>
     </script>
     <script src="js/main.js"></script>

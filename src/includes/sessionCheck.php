@@ -1,17 +1,19 @@
 <?php
 session_start();
 
-$TIMEOUT = 15 * 60; // 15 minutos em segundos
+define('TIMEOUT_ABSOLUTO', 5 * 60); // 5 minutos
 
+//Se o usuário não estiver logado, redireciona para a página de erro no caso de acesso sem sessão
 if (!isset($_SESSION['usuario'])) {
-    header('Location: /403.php');
+    header('Location: ../pages/4xx.php?motivo=sem_sessao');
     exit;
 }
 
-if (time() - $_SESSION['ultimo_acesso'] > $TIMEOUT) {
+// Se a sessão tiver estourado o tempo limite, encerra a sessão e redireciona para a tela de timeout
+if (time() - $_SESSION['ultimo_acesso'] > TIMEOUT_ABSOLUTO) {
     session_unset();
     session_destroy();
-    header('Location: /index.php?timeout=1');
+    header('Location: ../pages/4xx.php?timeout=1');
     exit;
 }
 
